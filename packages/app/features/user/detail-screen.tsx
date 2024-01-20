@@ -9,9 +9,11 @@ import {
   XStack,
   Card,
   H2,
+  XGroup,
   Separator,
+  Anchor,
 } from '@my/ui';
-import { ChevronLeft, ChevronRight, LogOut } from '@tamagui/lucide-icons';
+import { ChevronLeft, ChevronRight, ExternalLink, Github, Instagram, Linkedin, LogOut, Twitter, User } from '@tamagui/lucide-icons';
 import { useLink } from 'solito/link';
 
 interface Post {
@@ -28,10 +30,30 @@ interface Comment {
   body: string;
 }
 
+
+
 export function UserDetailScreen() {
+  const useLink = ({ href }) => {
+    const handleClick = () => {
+      window.location.href = href;
+    };
+  
+    return { onClick: handleClick };
+  };
+  
   const link = useLink({
     href: '/',
   });
+  const linkedin = useLink({
+    href:'https://www.linkedin.com/company/itwoxinc',
+  })
+  const instagram = useLink({
+    href:'https://www.instagram.com/itwoxinc',
+  })
+  const twitter = useLink({
+    href:'  https://twitter.com/itwoxinc',
+  })
+
 
   const [posts, setPosts] = useState<Post[]>([]);
   const [comments, setComments] = useState<Comment[]>([]);
@@ -74,18 +96,24 @@ export function UserDetailScreen() {
 
   return (
     <>
-    <H2 ta="center" mt={50} mb={50}>📊 Dashboard</H2>
-
-    <Theme name="pink">
-          <Card padding="$4" mb={20}>
-        <Paragraph ta="center">
-        🍃 Here's a basic starter to show navigating from one screen to another. This screen uses the
-          same code on Next.js and React Native.
-        </Paragraph>
-        </Card>
-        </Theme>
     
-    <YStack f={1} jc="center" ai="center" space={10}>
+      <Card padding="$5" mb={50}>
+        
+        <XGroup justifyContent="center" gap="$4">
+        <H2 mr={90}>📶 Dashboard</H2>
+        <Theme name="blue"><Button circular {...linkedin} theme="active" icon={Linkedin}></Button></Theme>
+          <Theme name="pink"><Button circular {...instagram} theme="active" icon={ExternalLink}></Button></Theme>
+          <Theme name="dark"><Button circular {...twitter} theme="active" icon={Github}></Button></Theme>
+          <Theme name="red"><Button {...link} theme="active" icon={LogOut}>Log out</Button></Theme>
+        </XGroup>
+        
+      </Card>
+    
+    
+
+   
+    
+    <YStack f={1} space={10}>
       
       {/* Display all current posts with comments in a single card */}
       {/* Display each post in its own card with comments */}
@@ -107,8 +135,10 @@ export function UserDetailScreen() {
           </Theme>
       ))}
   <Separator />
+
+  
       {/* Pagination with horizontal page numbers */}
-      <YStack mt={20}>
+      <YStack mt={20} mb={20} jc="center" ai="center" >
         <XStack space={2} ai="center">
           <Button
             icon={ChevronLeft}
@@ -131,7 +161,7 @@ export function UserDetailScreen() {
 
           <Button
             icon={ChevronRight}
-            disabled={currentPosts.length < postsPerPage}
+            disabled={currentPage === 10}
             onPress={() => paginate(currentPage + 1)}
           >
             Next
@@ -139,11 +169,12 @@ export function UserDetailScreen() {
         </XStack>
       </YStack>
       <Separator />
-      <Theme name="red">
-      <Button mb={10} {...link} icon={LogOut}>
-        Log out
-      </Button>
-      </Theme>
+      <Paragraph ta="center" mb={20}>
+          Made with ❤️ by{' '}
+          <Anchor color="$color12" href="https://github.com/1165CHETAN" target="_blank">
+            Chetan Chavan
+          </Anchor>
+        </Paragraph>
     </YStack>
     </>
   );
