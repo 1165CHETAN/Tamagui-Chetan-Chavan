@@ -45,13 +45,13 @@ export function UserDetailScreen() {
     href: '/',
   });
   const linkedin = useLink({
-    href:'https://www.linkedin.com/company/itwoxinc',
+    href:'https://www.linkedin.com/in/1165chetan',
   })
   const instagram = useLink({
-    href:'https://www.instagram.com/itwoxinc',
+    href:'https://portfolio-chetan-chavan.vercel.app',
   })
   const twitter = useLink({
-    href:'  https://twitter.com/itwoxinc',
+    href:'https://github.com/1165CHETAN',
   })
 
 
