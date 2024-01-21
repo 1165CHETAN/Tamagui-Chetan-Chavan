@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import {
   Button,
   Paragraph,
@@ -13,8 +13,7 @@ import {
   Separator,
   Anchor,
 } from '@my/ui';
-import { ChevronLeft, ChevronRight, ExternalLink, Github, Instagram, Linkedin, LogOut, Twitter, User } from '@tamagui/lucide-icons';
-import { useLink } from 'solito/link';
+import { ChevronLeft, ChevronRight, ExternalLink, Github, Linkedin, LogOut, } from '@tamagui/lucide-icons';
 
 interface Post {
   id: number;
@@ -72,7 +71,7 @@ export function UserDetailScreen() {
       }
     };
 
-    // Fetch comments from the API
+    // Fetch comments from the given API for comments and posts
     const fetchComments = async () => {
       try {
         const response = await fetch('https://jsonplaceholder.typicode.com/comments');
@@ -110,20 +109,17 @@ export function UserDetailScreen() {
       </Card>
     
     
-
-   
-    
     <YStack f={1} space={10}>
       
-      {/* Display all current posts with comments in a single card */}
-      {/* Display each post in its own card with comments */}
+      {/*  all current posts with comments in a single card */}
+      {/*  each post in its own card with comments */}
       {currentPosts.map((post) => (
           <Theme name="blue">
           <Card key={post.id} padding="$2">
             <Paragraph>🪧Post : {post.title}</Paragraph>
             <Separator />
             <Paragraph>⬇️Comments on Post: </Paragraph>
-            {/* Display comments for the current post */}
+            {/* comments for the current post */}
             {comments
               .filter((comment) => comment.postId === post.id)
               .map((comment) => (
@@ -148,11 +144,11 @@ export function UserDetailScreen() {
             Previous
           </Button>
 
-          {/* Generate page number buttons */}
+          {/* Generate page number buttons horizontally*/}
           {Array.from({ length: Math.ceil(posts.length / postsPerPage) }, (_, index) => (
             <Button
               key={index + 1}
-              size="$4" // Adjust size as needed
+              size="$4" // Adjust size for buttons
               onPress={() => paginate(index + 1)}
             >
               {index + 1}

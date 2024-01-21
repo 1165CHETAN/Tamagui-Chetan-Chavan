@@ -2,25 +2,17 @@ import {
   Anchor,
   Button,
   H1,
-  H3,
-  Input,
   Paragraph,
   Separator,
-  Sheet,
-  Text,
   Theme,
-  useToastController,
-  View,
-  XStack,
   YStack,
   Card,
   XGroup,
 } from '@my/ui';
-import { ChevronDown, ChevronRight, Instagram, Linkedin, LogOut, Twitter } from '@tamagui/lucide-icons';
-import { useState } from 'react';
+import { Instagram, Linkedin, Twitter } from '@tamagui/lucide-icons';
 import { useLink } from 'solito/link';
 import { SignIn } from './signin';
-import { H2 } from '@my/ui';
+
 
 export function HomeScreen() {
   const linkProps = useLink({

@@ -1,22 +1,16 @@
 import {
     Anchor,
     Button,
-    H1,
     H3,
     Input,
-    Paragraph,
-    Separator,
     Sheet,
     Text,
     Theme,
     useToastController,
     View,
-    XStack,
-    YStack,
-    Card,
     XGroup,
   } from '@my/ui';
-  import { ChevronDown, ChevronRight, Twitter } from '@tamagui/lucide-icons';
+  import { ChevronDown, ChevronRight } from '@tamagui/lucide-icons';
   import { useState } from 'react';
   import { useLink } from 'solito/link';
   
@@ -36,7 +30,7 @@ export function SignIn() {
     
    
     const handleSignIn = () => {
-      // Simulate authentication (replace with actual authentication logic)
+      // sample username and password
       const correctEmail = 'chetan@example.com';
       const correctPassword = 'password123';
   
