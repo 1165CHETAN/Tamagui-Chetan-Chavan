@@ -1,95 +1,80 @@
-# Tamagui + Solito + Next + Expo Monorepo
 
-```sh
-npm create tamagui
-```
+## Tamagui-Chetan Chavan
 
-## 🔦 About
+### [live_link](https://tamagui-chetan-chavan-next.vercel.app)      |    [demo_video](https://www.canva.com/design/DAF6U2BvOdQ/cXD78Va2DEtXsv4ap6ZHZQ/watch?utm_content=DAF6U2BvOdQ&utm_campaign=designshare&utm_medium=link&utm_source=editor) 
 
-This monorepo is a starter for an Expo + Next.js + Tamagui + Solito app.
+🍃 "Join the eco-friendly revolution! Say goodbye to paper and embrace the digital age with our chat application. Connect effortlessly, share ideas seamlessly, and help us save trees one message at a time. Let's chat for a greener tomorrow!" 🍃
 
-Many thanks to [@FernandoTheRojo](https://twitter.com/fernandotherojo) for the Solito starter monorepo which this was forked from. Check out his [talk about using expo + next together at Next.js Conf 2021](https://www.youtube.com/watch?v=0lnbdRweJtA).
 
-## 📦 Included packages
+![taimg](https://github.com/1165CHETAN/Tamagui-Chetan-Chavan/assets/111604779/ba6bd30a-bdd0-46c2-a272-955ff0515fc8)
 
-- [Tamagui](https://tamagui.dev) 🪄
-- [solito](https://solito.dev) for cross-platform navigation
-- Expo SDK
-- Next.js
-- Expo Router
 
-## 🗂 Folder layout
+## Project Setup Instructions
 
-The main apps are:
+1. Install project dependencies:
+   
+   ```bash
+   yarn install
+2. Start the development server:
 
-- `expo` (native)
-- `next` (web)
+   ```bash
+   yarn web
+3. Open your web browser and navigate to the local port provided by the development server.
 
-- `packages` shared packages across apps
-  - `ui` includes your custom UI kit that will be optimized by Tamagui
-  - `app` you'll be importing most files from `app/`
-    - `features` (don't use a `screens` folder. organize by feature.)
-    - `provider` (all the providers that wrap the app, and some no-ops for Web.)
+4. Use the following credentials to sign in:
 
-You can add other folders inside of `packages/` if you know what you're doing and have a good reason to.
+- Username: chetan@example.com
+- Password: password123
 
-## 🏁 Start the app
+## Technology Stack
 
-- Install dependencies: `yarn`
+- TypeScript : Catch errors early for a more reliable and maintainable project.
+- React : library for building user interfaces. It is declarative, efficient, and flexible. React makes it easy to create interactive UIs by using a component-based approach.
+- Tamagui : It provides a styling system, a theming system, and a component system.
+- Solito : A tiny wrapper around React Navigation and Next. js that lets you share navigation code across platforms.
+- Github : for version control and code hosting.
+- Vercel: Deploy your applications with Vercel, a cloud platform for serverless deployment.
+ 
+![tamaguitechstack](https://github.com/1165CHETAN/Tamagui-Chetan-Chavan/assets/111604779/06169c8b-25e5-4635-bf74-5e5d45ab3771)
 
-- Next.js local dev: `yarn web`
 
-To run with optimizer on in dev mode (just for testing, it's faster to leave it off): `yarn web:extract`. To build for production `yarn web:prod`.
+## Project Recipe
 
-To see debug output to verify the compiler, add `// debug` as a comment to the top of any file.
 
-- Expo local dev: `yarn native`
+1. Project Initialization and Home Screen Design:
 
-## UI Kit
+- I initiated a new React project using TypeScript.
+- Developed a home screen with signin button and integrated social media handles for our company.
 
-Note we're following the [design systems guide](https://tamagui.dev/docs/guides/design-systems) and creating our own package for components.
+2. Sign-In Page with Tamagui Effects:
 
-See `packages/ui` named `@my/ui` for how this works.
+- Executed the development of the sign-in page using Tamagui, implementing the sheet concept for a visually appealing effect.
+- Utilized Tamagui to embed toast logic for authentication feedback. Users receive a pop-up message ('Hey, please enter valid credentials') if they fail to enter the correct username and password.
 
-## 🆕 Add new dependencies
+3. Dashboard Feature Implementation with Tamagui Cards and Pagination:
 
-### Pure JS dependencies
+- Developed the dashboard screen, with 'Dashboard' as title.
+- Fetched a list of posts & its comments from Posts API, Comments API URL's
+- List of post and comments displayed on dashboard in form of cards.
+- List of posts are paginated to show 10 records with an ability to move to next/previous page
+- Utilized Tamagui's theme-card concept to embed one post and its corresponding comments in a single card.
+- Implemented pagination with page number buttons, preventing endless scrolling.
 
-If you're installing a JavaScript-only dependency that will be used across platforms, install it in `packages/app`:
+5. Enhanced User Experience with Special Navbar:
 
-```sh
-cd packages/app
-yarn add date-fns
-cd ../..
-yarn
-```
+- Designed a special navbar on the dashboard for a better user experience.
+- Included the developer's social media handles and the dashboard title in the navbar.
+- Implemented a logout button, redirecting the user to the home page upon clicking.
 
-### Native dependencies
+5. Repository Creation, and Deployment:
 
-If you're installing a library with any native code, you must install it in `expo`:
+- Created a separate repository on GitHub.
+- Deployed the project on Vercel, ensuring accessibility from anywhere, anytime.
 
-```sh
-cd apps/expo
-yarn add react-native-reanimated
-cd ..
-yarn
-```
 
-## Update new dependencies
+## Issue faced
+- Addressed the difficulty of preventing direct access to the dashboard page without proper sign-in, but i will work on it.
 
-### Pure JS dependencies
 
-```sh
-yarn upgrade-interactive
-```
-
-You can also install the native library inside of `packages/app` if you want to get autoimport for that package inside of the `app` folder. However, you need to be careful and install the _exact_ same version in both packages. If the versions mismatch at all, you'll potentially get terrible bugs. This is a classic monorepo issue. I use `lerna-update-wizard` to help with this (you don't need to use Lerna to use that lib).
-
-You may potentially want to have the native module transpiled for the next app. If you get error messages with `Cannot use import statement outside a module`, you may need to use `transpilePackages` in your `next.config.js` and add the module to the array there.
-
-### Deploying to Vercel
-
-- Root: `apps/next`
-- Install command to be `yarn set version stable && yarn install`
-- Build command: leave default setting
-- Output dir: leave default setting
+## 🙎🏻‍♂️Connect with me
+  [👜LinkedIn](https://www.linkedin.com/in/1165chetan) |    [✉️Email](chetanchavan1165@gmail.com)
